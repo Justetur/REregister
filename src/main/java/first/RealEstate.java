@@ -11,6 +11,14 @@ public abstract class RealEstate {
     private City city;
     private String address;
 
+    public RealEstate(Object objectType, String owner, int price, City city, String address) {
+        this.objectType = objectType;
+        this.owner = owner;
+        this.price = price;
+        this.city = city;
+        this.address = address;
+    }
+
     public Object getObjectType() {
         return objectType;
     }
@@ -26,14 +34,6 @@ public abstract class RealEstate {
 
     public String getAddress() {
         return address;
-    }
-
-    public RealEstate(Object objectType, String owner, int price, City city, String address) {
-        this.objectType = objectType;
-        this.owner = owner;
-        this.price = price;
-        this.city = city;
-        this.address = address;
     }
 
     public City getCity() {
