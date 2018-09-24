@@ -9,8 +9,8 @@ public class Flat extends RealEstate implements InfoAboutObject {
     private EquipmentType equipment;
 
 
-    public Flat(String owner, int price, String address, double flatArea, int rooms, EquipmentType equipment) {
-        super(owner, price, address);
+    public Flat(Object objectType, String owner, int price, City city, String address, double flatArea, int rooms, EquipmentType equipment) {
+        super(objectType, owner, price, city, address);
         this.flatArea = flatArea;
         this.rooms = rooms;
         this.equipment = equipment;
@@ -31,7 +31,7 @@ public class Flat extends RealEstate implements InfoAboutObject {
 
     @Override
     public void getInfoAboutObject() {
-        System.out.println("Flat owner: " + getOwner() + ", address: " + getAddress() + ", price: " + getPrice() +
+        System.out.println(getObjectType() + " owner: " + getOwner() + ", address: " + getAddress() + ", " + getCity() +  ", price: " + getPrice() +
                 " Eur, flat area: " + getFlatArea() + " sq.m., rooms: " + getRooms());
     }
 }

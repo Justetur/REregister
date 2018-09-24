@@ -9,15 +9,16 @@ public class House extends RealEstate implements InfoAboutObject {
     private double plotArea;
 
 
-    public House(String owner, int price, String address, HouseType type, double houseArea,
+    public House(Object objectType, String owner, int price, City city, String address, HouseType type, double houseArea,
                  EquipmentType equipment, int buildYear, double plotArea) {
-        super(owner, price, address);
+        super(objectType, owner, price, city, address);
         this.type = type;
         this.houseArea = houseArea;
         this.equipment = equipment;
         this.buildYear = buildYear;
         this.plotArea = plotArea;
     }
+
 
     public int getBuildYear() {
         return buildYear;
@@ -46,7 +47,7 @@ public class House extends RealEstate implements InfoAboutObject {
 
     @Override
     public void getInfoAboutObject() {
-        System.out.println("House owner: " + getOwner() + ", address: " + getAddress() + ", price: " + getPrice() +
+        System.out.println(getObjectType() + " owner: " + getOwner() + ", address: " + getAddress() + ", " + getCity() + ", price: " + getPrice() +
                 " Eur, house area: " + getHouseArea() + " sq.m., land area: " + getPlotArea() + " a, house type: " +
                 getType() + ", equipment type: " + getEquipment() + ", build year: " + getBuildYear());
     }
