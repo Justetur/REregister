@@ -1,6 +1,11 @@
 package first;
 
-public class House extends RealEstate implements InfoAboutObject {
+import Enums.City;
+import Enums.EquipmentType;
+import Enums.HouseType;
+import Enums.ObjectType;
+
+public class House extends RealEstate {
 
     private HouseType type;
     private double houseArea;
@@ -9,8 +14,8 @@ public class House extends RealEstate implements InfoAboutObject {
     private double plotArea;
 
 
-    public House(Object objectType, String owner, int price, City city, String address, HouseType type, double houseArea,
-                 EquipmentType equipment, int buildYear, double plotArea) {
+    public House(ObjectType objectType, String owner, int price, City city, String address, HouseType type,
+                 double houseArea, EquipmentType equipment, int buildYear, double plotArea) {
         super(objectType, owner, price, city, address);
         this.type = type;
         this.houseArea = houseArea;
@@ -20,36 +25,47 @@ public class House extends RealEstate implements InfoAboutObject {
     }
 
 
-    public int getBuildYear() {
-        return buildYear;
-    }
-
-    public double getPlotArea() {
-        return plotArea;
-    }
-
 
     public HouseType getType() {
         return type;
+    }
+
+    public void setType(HouseType type) {
+        this.type = type;
     }
 
     public double getHouseArea() {
         return houseArea;
     }
 
+    public void setHouseArea(double houseArea) {
+        this.houseArea = houseArea;
+    }
+
     public EquipmentType getEquipment() {
         return equipment;
     }
 
-    public double getLandPlot() {
+    public void setEquipment(EquipmentType equipment) {
+        this.equipment = equipment;
+    }
+
+    public int getBuildYear() {
+        return buildYear;
+    }
+
+    public void setBuildYear(int buildYear) {
+        this.buildYear = buildYear;
+    }
+
+    public double getPlotArea() {
         return plotArea;
     }
 
-    @Override
-    public void getInfoAboutObject() {
-        System.out.println(getObjectType() + " owner: " + getOwner() + ", address: " + getAddress() + ", " + getCity() + ", price: " + getPrice() +
-                " Eur, house area: " + getHouseArea() + " sq.m., land area: " + getPlotArea() + " a, house type: " +
-                getType() + ", equipment type: " + getEquipment() + ", build year: " + getBuildYear());
+    public void setPlotArea(double plotArea) {
+        this.plotArea = plotArea;
     }
+
+
 
 }

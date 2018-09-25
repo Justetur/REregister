@@ -1,4 +1,4 @@
-package first;
+package Enums;
 
 public enum City {
 
