@@ -1,18 +1,16 @@
 package first;
 
 import Enums.City;
-import Enums.ObjectType;
-import Enums.ObjectType;
 import Enums.PremisePurpose;
 
-public class Premise extends RealEstate {
+public class Premise extends RealEstate{
+
 
     private double premiseArea;
     private PremisePurpose purpose;
 
-    public Premise(ObjectType objectType, String owner, int price, City city, String address, double premiseArea,
-                   PremisePurpose purpose) {
-        super(objectType, owner, price, city, address);
+    public Premise(String owner, int price, City city, String address, double premiseArea, PremisePurpose purpose) {
+        super(owner, price, city, address);
         this.premiseArea = premiseArea;
         this.purpose = purpose;
     }
@@ -32,6 +30,4 @@ public class Premise extends RealEstate {
     public void setPurpose(PremisePurpose purpose) {
         this.purpose = purpose;
     }
-
-
 }

@@ -1,31 +1,20 @@
 package first;
 
-import Enums.City;
-import Enums.ObjectType;
 
+import Enums.City;
 
 public abstract class RealEstate {
 
-    private ObjectType objectType;
     private String owner;
     private int price;
     private City city;
     private String address;
 
-    public RealEstate(ObjectType objectType, String owner, int price, City city, String address) {
-        this.objectType = objectType;
+    public RealEstate(String owner, int price, City city, String address) {
         this.owner = owner;
         this.price = price;
         this.city = city;
         this.address = address;
-    }
-
-    public Object getObjectType() {
-        return objectType;
-    }
-
-    public void setObjectType(ObjectType objectType) {
-        this.objectType = objectType;
     }
 
     public String getOwner() {
