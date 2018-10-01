@@ -5,6 +5,7 @@ import re.register.qualificators.EquipmentType;
 import re.register.qualificators.PlotPurpose;
 import re.register.qualificators.PremisePurpose;
 
+
 public class SearchCriteria {
 
     private String typeOfRealEstate;
@@ -14,11 +15,15 @@ public class SearchCriteria {
     private String address;
     private Double areaFrom;
     private Double areaTo;
+    private Integer roomsFrom;
+    private Integer roomsTo;
+    private EquipmentType equipment;
+    private Integer buildYearFrom;
+    private Integer buildYearTo;
+    private PlotPurpose plotPurpose;
+    private PremisePurpose premisePurpose;
 
-
-
-    public SearchCriteria(String typeOfRealEstate, Integer priceFrom, Integer priceTo, City city, String address,
-                          Double areaFrom, Double areaTo) {
+    public SearchCriteria(String typeOfRealEstate, Integer priceFrom, Integer priceTo, City city, String address, Double areaFrom, Double areaTo, Integer roomsFrom, Integer roomsTo, EquipmentType equipment, Integer buildYearFrom, Integer buildYearTo, PlotPurpose plotPurpose, PremisePurpose premisePurpose) {
         this.typeOfRealEstate = typeOfRealEstate;
         this.priceFrom = priceFrom;
         this.priceTo = priceTo;
@@ -26,6 +31,13 @@ public class SearchCriteria {
         this.address = address;
         this.areaFrom = areaFrom;
         this.areaTo = areaTo;
+        this.roomsFrom = roomsFrom;
+        this.roomsTo = roomsTo;
+        this.equipment = equipment;
+        this.buildYearFrom = buildYearFrom;
+        this.buildYearTo = buildYearTo;
+        this.plotPurpose = plotPurpose;
+        this.premisePurpose = premisePurpose;
     }
 
     public String getTypeOfRealEstate() {
@@ -84,9 +96,61 @@ public class SearchCriteria {
         this.areaTo = areaTo;
     }
 
+    public Integer getRoomsFrom() {
+        return roomsFrom;
+    }
 
+    public void setRoomsFrom(Integer roomsFrom) {
+        this.roomsFrom = roomsFrom;
+    }
 
+    public Integer getRoomsTo() {
+        return roomsTo;
+    }
 
+    public void setRoomsTo(Integer roomsTo) {
+        this.roomsTo = roomsTo;
+    }
+
+    public EquipmentType getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(EquipmentType equipment) {
+        this.equipment = equipment;
+    }
+
+    public Integer getBuildYearFrom() {
+        return buildYearFrom;
+    }
+
+    public void setBuildYearFrom(Integer buildYearFrom) {
+        this.buildYearFrom = buildYearFrom;
+    }
+
+    public Integer getBuildYearTo() {
+        return buildYearTo;
+    }
+
+    public void setBuildYearTo(Integer buildYearTo) {
+        this.buildYearTo = buildYearTo;
+    }
+
+    public PlotPurpose getPlotPurpose() {
+        return plotPurpose;
+    }
+
+    public void setPlotPurpose(PlotPurpose plotPurpose) {
+        this.plotPurpose = plotPurpose;
+    }
+
+    public PremisePurpose getPremisePurpose() {
+        return premisePurpose;
+    }
+
+    public void setPremisePurpose(PremisePurpose premisePurpose) {
+        this.premisePurpose = premisePurpose;
+    }
 }
 
 

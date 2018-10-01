@@ -22,10 +22,26 @@ public class Register {
         return RealEstate;
     }
 
-    public void add(RealEstate object) {
+    public int add(RealEstate object) {
+        object.setId(getLastId() +1);
         rElist.add(object);
+
+        return object.getId();
     }
 
+
+    private int getLastId() {
+
+        int max = 0;
+
+        for (RealEstate object : rElist) {
+            if (max < object.getId()) {
+                max = object.getId();
+            }
+        }
+
+        return max;
+    }
 
     public void delete(RealEstate object) {
         rElist.remove(object);
@@ -41,7 +57,9 @@ public class Register {
 
         for (RealEstate object : rElist) {
             if (typeFilter(criteria, object) && priceFilter(criteria, object) && cityFilter(criteria, object) &&
-                    addressFilter(criteria, object) && areaFilter(criteria, object)) {
+                    addressFilter(criteria, object) && areaFilter(criteria, object) && roomsFilter(criteria, object) &&
+                    buildYearFilter(criteria, object) && equipmentFilter(criteria, object) &&
+                    plotPurposeFilter(criteria, object) && premisePurposeFilter(criteria, object)) {
                 filteredList.add(object);
             }
         }
@@ -58,7 +76,7 @@ public class Register {
         if(criteria.getTypeOfRealEstate() != null){
             typeMatches = criteria.getTypeOfRealEstate().equals(isTypeOf(object));
         }
-        
+
 
         if(typeNotNull && typeMatches){
             return true;
@@ -134,8 +152,107 @@ public class Register {
         }
     }
 
+    private boolean buildYearFilter(SearchCriteria criteria, re.register.real.estate.RealEstate object) {
 
+        boolean buildYearNotNull = criteria.getBuildYearFrom() != null && criteria.getBuildYearTo() != null;
+        boolean buildYearBetweenLimits = false;
 
+        if(object instanceof Flat) {
+            Flat flat = (Flat) object;
+            buildYearBetweenLimits = flat.getBuildYear() >= criteria.getBuildYearFrom() &&
+                    flat.getBuildYear() <= criteria.getBuildYearTo();
+
+        } else if(object instanceof House){
+            House house = (House) object;
+            buildYearBetweenLimits = house.getBuildYear() >= criteria.getBuildYearFrom() &&
+                    house.getBuildYear() <= criteria.getBuildYearTo();
+        }
+
+        if(buildYearNotNull && buildYearBetweenLimits){
+            return true;
+        }
+        return false;
+    }
+
+    private boolean roomsFilter(SearchCriteria criteria, RealEstate object) {
+
+        boolean roomsNotNull = criteria.getRoomsFrom() != null && criteria.getRoomsTo() != null;
+        boolean roomsBetweenLimits = false;
+
+        if(object instanceof Flat) {
+            Flat flat = (Flat) object;
+            roomsBetweenLimits = flat.getRooms() >= criteria.getRoomsFrom() && flat.getRooms() <= criteria.getRoomsFrom();
+
+        } else if(object instanceof House){
+            House house = (House) object;
+            roomsBetweenLimits = house.getRooms() >= criteria.getRoomsFrom() && house.getRooms() <= criteria.getRoomsFrom();
+        }
+
+        if(roomsNotNull && roomsBetweenLimits){
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean premisePurposeFilter(SearchCriteria criteria, RealEstate object) {
+
+        boolean purposeNotNull = criteria.getPremisePurpose() != null;
+        boolean purposeMatches = false;
+
+        if(object instanceof Premise){
+            Premise premise = (Premise) object;
+            purposeMatches = premise.getPurpose().equals(criteria.getPremisePurpose());;
+        }
+
+        if(purposeNotNull && purposeMatches){
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean plotPurposeFilter(SearchCriteria criteria, RealEstate object) {
+
+        boolean purposeNotNull = criteria.getPlotPurpose() != null;
+        boolean purposeMatches = false;
+
+        if(object instanceof Plot){
+            Plot plot = (Plot) object;
+            purposeMatches = plot.getPurpose().equals(criteria.getPlotPurpose());;
+        }
+
+        if(purposeNotNull && purposeMatches){
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean equipmentFilter(SearchCriteria criteria, RealEstate object) {
+
+        boolean equipmentNotNull = criteria.getEquipment() != null;
+        boolean equipmentMatches = false;
+
+        if(object instanceof Flat) {
+            Flat flat = (Flat) object;
+            equipmentMatches = flat.getEquipment().equals(criteria.getEquipment());
+
+        } else if(object instanceof House){
+            House house = (House) object;
+            equipmentMatches = house.getEquipment().equals(criteria.getEquipment());;
+
+        } else if(object instanceof Premise){
+            Premise premise = (Premise) object;
+            equipmentMatches = premise.getEquipment().equals(criteria.getEquipment());;
+        }
+
+        if(equipmentNotNull && equipmentMatches){
+            return true;
+        }
+
+        return false;
+    }
 
 
 

@@ -5,6 +5,7 @@ import re.register.qualificators.City;
 
 public abstract class RealEstate {
 
+    private Integer id;
     private String owner;
     private int price;
     private City city;
@@ -19,6 +20,13 @@ public abstract class RealEstate {
         this.area = area;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getOwner() {
         return owner;
