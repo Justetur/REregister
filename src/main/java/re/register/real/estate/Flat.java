@@ -1,29 +1,20 @@
-package first;
+package re.register.real.estate;
 
-import Enums.City;
-import Enums.EquipmentType;
+import re.register.qualificators.City;
+import re.register.qualificators.EquipmentType;
 
 public class Flat extends RealEstate{
 
 
-    private double flatArea;
     private int rooms;
     private EquipmentType equipment;
 
-    public Flat(String owner, int price, City city, String address, double flatArea, int rooms, EquipmentType equipment) {
-        super(owner, price, city, address);
-        this.flatArea = flatArea;
+    public Flat(String owner, int price, City city, String address, double area, int rooms, EquipmentType equipment) {
+        super(owner, price, city, address, area);
         this.rooms = rooms;
         this.equipment = equipment;
     }
 
-    public double getFlatArea() {
-        return flatArea;
-    }
-
-    public void setFlatArea(double flatArea) {
-        this.flatArea = flatArea;
-    }
 
     public int getRooms() {
         return rooms;

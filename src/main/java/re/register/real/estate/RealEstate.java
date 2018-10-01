@@ -1,7 +1,7 @@
-package first;
+package re.register.real.estate;
 
 
-import Enums.City;
+import re.register.qualificators.City;
 
 public abstract class RealEstate {
 
@@ -9,13 +9,16 @@ public abstract class RealEstate {
     private int price;
     private City city;
     private String address;
+    private double area;
 
-    public RealEstate(String owner, int price, City city, String address) {
+    public RealEstate(String owner, int price, City city, String address, double area) {
         this.owner = owner;
         this.price = price;
         this.city = city;
         this.address = address;
+        this.area = area;
     }
+
 
     public String getOwner() {
         return owner;
@@ -47,6 +50,14 @@ public abstract class RealEstate {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public double getArea() {
+        return area;
+    }
+
+    public void setArea(double area) {
+        this.area = area;
     }
 }
 

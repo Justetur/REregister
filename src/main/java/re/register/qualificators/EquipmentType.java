@@ -1,4 +1,4 @@
-package Enums;
+package re.register.qualificators;
 
 public enum EquipmentType {
 
