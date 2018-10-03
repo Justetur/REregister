@@ -1,6 +1,8 @@
 package re.register.model;
 
 
+import re.register.Services.Search;
+
 import java.util.List;
 
 public class Register {
@@ -58,6 +60,12 @@ public class Register {
     public List<RealEstate> getAllObjects() {
         return register;
     }
+
+//    public List<RealEstate> search(Search search, SearchCriteria criteria){
+//
+//        List<RealEstate> filteredList = search.search(Register.createNew(register), criteria);
+//        return filteredList;
+//    }
 
 
 }

@@ -43,7 +43,7 @@ public class SearchTest {
         register = Register.createNew(registerList);
 
         criteria = new SearchCriteria(null, 70000, 110000, City.Kaunas, null,
-                null, null, null, null, null, null,
+                null, null, 1, 4, null, null,
                 null, null);
 
         search = new Search();
@@ -56,15 +56,14 @@ public class SearchTest {
 
         List<RealEstate> result = search.search(register, criteria);
 
-        Assert.assertEquals(3, result.size());
+        Assert.assertEquals(2, result.size());
         Assert.assertEquals(registerList.get(1).getId(), result.get(0).getId());
-        Assert.assertEquals(registerList.get(6).getId(), result.get(1).getId());
-        Assert.assertEquals(registerList.get(7).getId(), result.get(2).getId());
+        Assert.assertEquals(registerList.get(7).getId(), result.get(1).getId());
         Assert.assertEquals(registerList.get(1).getCity(), result.get(0).getCity());
-        Assert.assertEquals(registerList.get(6).getCity(), result.get(1).getCity());
-        Assert.assertEquals(registerList.get(7).getCity(), result.get(2).getCity());
+        Assert.assertEquals(registerList.get(7).getCity(), result.get(1).getCity());
         Assert.assertEquals(registerList.get(1).getPrice(), result.get(0).getPrice());
-        Assert.assertEquals(registerList.get(6).getPrice(), result.get(1).getPrice());
-        Assert.assertEquals(registerList.get(7).getPrice(), result.get(2).getPrice());
+        Assert.assertEquals(registerList.get(7).getPrice(), result.get(1).getPrice());
+
     }
+
 }

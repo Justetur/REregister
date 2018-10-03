@@ -144,11 +144,10 @@ public class Search {
 
         if (reObject instanceof Flat) {
             Flat flat = (Flat) reObject;
-            return flat.getRooms() >= criteria.getRoomsFrom() && flat.getRooms() <= criteria.getRoomsFrom();
-
+            return flat.getRooms() >= criteria.getRoomsFrom() && flat.getRooms() <= criteria.getRoomsTo();
         } else if (reObject instanceof House) {
             House house = (House) reObject;
-            return house.getRooms() >= criteria.getRoomsFrom() && house.getRooms() <= criteria.getRoomsFrom();
+            return house.getRooms() >= criteria.getRoomsFrom() && house.getRooms() <= criteria.getRoomsTo();
         } else {
             return false;
         }
