@@ -1,4 +1,4 @@
-package re.register.real.estate;
+package re.register.model;
 
 
 import re.register.qualificators.City;
@@ -12,7 +12,8 @@ public abstract class RealEstate {
     private String address;
     private double area;
 
-    public RealEstate(String owner, int price, City city, String address, double area) {
+    public RealEstate(Integer id, String owner, int price, City city, String address, double area) {
+        this.id = id;
         this.owner = owner;
         this.price = price;
         this.city = city;
@@ -20,7 +21,7 @@ public abstract class RealEstate {
         this.area = area;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 

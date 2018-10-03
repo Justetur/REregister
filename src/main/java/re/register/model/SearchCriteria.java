@@ -1,9 +1,9 @@
 package re.register.model;
 
+
 import re.register.qualificators.City;
 import re.register.qualificators.EquipmentType;
 import re.register.qualificators.PlotPurpose;
-import re.register.qualificators.PremisePurpose;
 
 
 public class SearchCriteria {
@@ -20,10 +20,12 @@ public class SearchCriteria {
     private EquipmentType equipment;
     private Integer buildYearFrom;
     private Integer buildYearTo;
-    private PlotPurpose plotPurpose;
-    private PremisePurpose premisePurpose;
+    private String purpose;
 
-    public SearchCriteria(String typeOfRealEstate, Integer priceFrom, Integer priceTo, City city, String address, Double areaFrom, Double areaTo, Integer roomsFrom, Integer roomsTo, EquipmentType equipment, Integer buildYearFrom, Integer buildYearTo, PlotPurpose plotPurpose, PremisePurpose premisePurpose) {
+
+    public SearchCriteria(String typeOfRealEstate, Integer priceFrom, Integer priceTo, City city, String address,
+                          Double areaFrom, Double areaTo, Integer roomsFrom, Integer roomsTo, EquipmentType equipment,
+                          Integer buildYearFrom, Integer buildYearTo, String purpose) {
         this.typeOfRealEstate = typeOfRealEstate;
         this.priceFrom = priceFrom;
         this.priceTo = priceTo;
@@ -36,8 +38,7 @@ public class SearchCriteria {
         this.equipment = equipment;
         this.buildYearFrom = buildYearFrom;
         this.buildYearTo = buildYearTo;
-        this.plotPurpose = plotPurpose;
-        this.premisePurpose = premisePurpose;
+        this.purpose = purpose;
     }
 
     public String getTypeOfRealEstate() {
@@ -136,21 +137,61 @@ public class SearchCriteria {
         this.buildYearTo = buildYearTo;
     }
 
-    public PlotPurpose getPlotPurpose() {
-        return plotPurpose;
+    public String getPurpose() {
+        return purpose;
     }
 
     public void setPlotPurpose(PlotPurpose plotPurpose) {
-        this.plotPurpose = plotPurpose;
+        this.purpose = purpose;
     }
 
-    public PremisePurpose getPremisePurpose() {
-        return premisePurpose;
-    }
 
-    public void setPremisePurpose(PremisePurpose premisePurpose) {
-        this.premisePurpose = premisePurpose;
-    }
 }
+
+//    private String field;
+//    private String value;
+//
+//    public SearchCriteria() {
+//
+//    }
+//
+//    public SearchCriteria(String field, String value) {
+//        super();
+//        this.field = field;
+//        this.value = value;
+//    }
+//
+//    public static Map<String, String> convertToMap(List<SearchCriteria> searchCriterias) {
+//
+//        Map<String, String> result = new HashMap<>();
+//
+//        for (SearchCriteria searchCriteria : searchCriterias) {
+//            result.put(searchCriteria.field, searchCriteria.value);
+//        }
+//        return result;
+//    }
+//
+//    public String getField() {
+//        return field;
+//    }
+//
+//    public void setField(String field) {
+//        this.field = field;
+//    }
+//
+//    public String getValue() {
+//        return value;
+//    }
+//
+//    public void setValue(String value) {
+//        this.value = value;
+//    }
+//
+//}
+
+
+
+
+
 
 
