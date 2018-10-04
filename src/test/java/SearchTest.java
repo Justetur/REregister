@@ -1,12 +1,13 @@
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import re.register.Services.Search;
 import re.register.model.*;
 import re.register.qualificators.City;
 import re.register.qualificators.EquipmentType;
 import re.register.qualificators.PlotPurpose;
 import re.register.qualificators.PremisePurpose;
+import re.register.model.Register;
+import re.register.services.Search;
 
 import java.util.ArrayList;
 import java.util.List;

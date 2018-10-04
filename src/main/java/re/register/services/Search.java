@@ -1,12 +1,14 @@
-package re.register.Services;
+package re.register.services;
 
+import org.springframework.stereotype.Service;
 import re.register.model.*;
+import re.register.model.Register;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class Search {
-
 
     public List<RealEstate> search(Register register, SearchCriteria criteria) {
 

@@ -1,10 +1,11 @@
 package re.register.model;
 
+
 import re.register.qualificators.City;
 import re.register.qualificators.EquipmentType;
 
-public class Flat extends RealEstate {
 
+public class Flat extends RealEstate {
 
     private int rooms;
     private int buildYear;

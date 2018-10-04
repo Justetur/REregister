@@ -1,11 +1,12 @@
 package re.register.model;
 
 
+import org.springframework.stereotype.Component;
 import re.register.qualificators.City;
 import re.register.qualificators.EquipmentType;
 import re.register.qualificators.PlotPurpose;
 
-
+@Component
 public class SearchCriteria {
 
     private String typeOfRealEstate;

@@ -1,7 +1,9 @@
 package re.register.model;
 
+
 import re.register.qualificators.City;
 import re.register.qualificators.EquipmentType;
+
 
 public class House extends RealEstate {
 

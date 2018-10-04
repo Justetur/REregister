@@ -1,8 +1,10 @@
 package re.register.model;
 
+
 import re.register.qualificators.City;
 import re.register.qualificators.EquipmentType;
 import re.register.qualificators.PremisePurpose;
+
 
 public class Premise extends RealEstate {
 
