@@ -37,4 +37,6 @@ public class Flat extends RealEstate {
         this.equipment = equipment;
     }
 
+
+
 }

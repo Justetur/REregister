@@ -37,4 +37,6 @@ public class Premise extends RealEstate {
     public void setBuildYear(int buildYear) {
         this.buildYear = buildYear;
     }
+
+
 }

@@ -1,13 +1,12 @@
 package re.register.model;
 
 
-import re.register.qualificators.City;
 import re.register.qualificators.EquipmentType;
 
 
 public class House extends RealEstate {
 
-    public EquipmentType equipment;
+    private EquipmentType equipment;
     private int rooms;
     private int buildYear;
     private double plotArea;
@@ -44,4 +43,5 @@ public class House extends RealEstate {
     public void setPlotArea(double plotArea) {
         this.plotArea = plotArea;
     }
+
 }

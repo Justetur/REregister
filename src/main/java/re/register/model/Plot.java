@@ -19,4 +19,6 @@ public class Plot extends RealEstate {
     public void setPurpose(PlotPurpose purpose) {
         this.purpose = purpose;
     }
+
+
 }
