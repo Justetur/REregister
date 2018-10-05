@@ -1,29 +1,28 @@
 package re.register.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import re.register.model.RealEstate;
-import re.register.model.Register;
-import re.register.model.SearchCriteria;
-
-
-import java.util.List;
+import re.register.repositories.Register;
 
 @RestController
 @RequestMapping("/register")
 public class RegisterController {
 
-    private RealEstate reObject;
 
     @Autowired
     private Register register;
-
-    private SearchCriteria criteria;
-
 
 
     @GetMapping

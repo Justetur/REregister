@@ -2,7 +2,7 @@ package re.register.services;
 
 import org.springframework.stereotype.Service;
 import re.register.model.*;
-import re.register.model.Register;
+import re.register.repositories.Register;
 
 import java.util.ArrayList;
 import java.util.List;
