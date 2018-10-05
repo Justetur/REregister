@@ -122,11 +122,11 @@ public class SearchTest {
 		List<RealEstate> result = filterBy.search(register, criteria);
 
 		Assert.assertEquals(2, result.size());
-		Assert.assertEquals(registerList.get(1).getId(), result.get(0).getId());
+		Assert.assertEquals(registerList.get(0).getId(), result.get(0).getId());
 		Assert.assertEquals(registerList.get(7).getId(), result.get(1).getId());
-		Assert.assertEquals(registerList.get(1).getCity(), result.get(0).getCity());
+		Assert.assertEquals(registerList.get(0).getCity(), result.get(0).getCity());
 		Assert.assertEquals(registerList.get(7).getCity(), result.get(1).getCity());
-		Assert.assertEquals(registerList.get(1).getPrice(), result.get(0).getPrice());
+		Assert.assertEquals(registerList.get(0).getPrice(), result.get(0).getPrice());
 		Assert.assertEquals(registerList.get(7).getPrice(), result.get(1).getPrice());
 
 	}

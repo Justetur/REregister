@@ -12,6 +12,10 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import org.apache.commons.io.FileUtils;
+import org.springframework.stereotype.Repository;
 import re.register.model.RealEstate;
 
 @Repository

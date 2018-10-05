@@ -1,6 +1,7 @@
 package re.register.model;
 
 
+import org.springframework.stereotype.Component;
 import re.register.qualificators.City;
 
 @Component
