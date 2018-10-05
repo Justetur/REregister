@@ -24,25 +24,6 @@ public class SearchCriteria {
     private String purpose;
 
 
-//    public SearchCriteria(String typeOfRealEstate, Integer priceFrom, Integer priceTo, City city, String address,
-//                          Double areaFrom, Double areaTo, Integer roomsFrom, Integer roomsTo, EquipmentType equipment,
-//                          Integer buildYearFrom, Integer buildYearTo, String purpose) {
-//        this.typeOfRealEstate = typeOfRealEstate;
-//        this.priceFrom = priceFrom;
-//        this.priceTo = priceTo;
-//        this.city = city;
-//        this.address = address;
-//        this.areaFrom = areaFrom;
-//        this.areaTo = areaTo;
-//        this.roomsFrom = roomsFrom;
-//        this.roomsTo = roomsTo;
-//        this.equipment = equipment;
-//        this.buildYearFrom = buildYearFrom;
-//        this.buildYearTo = buildYearTo;
-//        this.purpose = purpose;
-//    }
-    
-    
 
     public String getTypeOfRealEstate() {
         return typeOfRealEstate;

@@ -1,8 +1,6 @@
 package re.register.model;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import re.register.qualificators.City;
 
 @Component
@@ -15,15 +13,7 @@ public abstract class RealEstate {
     private String address;
     private double area;
 
-    @Autowired
-    public RealEstate(Integer id, String owner, int price, City city, String address, double area) {
-        this.id = id;
-        this.owner = owner;
-        this.price = price;
-        this.city = city;
-        this.address = address;
-        this.area = area;
-    }
+
 
     public int getId() {
         return id;

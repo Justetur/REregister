@@ -8,7 +8,6 @@ import re.register.qualificators.City;
 import re.register.qualificators.EquipmentType;
 import re.register.qualificators.PlotPurpose;
 import re.register.qualificators.PremisePurpose;
-import re.register.repositories.Register;
 import re.register.services.Search;
 
 import java.util.ArrayList;
@@ -17,43 +16,110 @@ import java.util.List;
 public class SearchTest {
 
 	private Register register;
-	private Search search;
+	private Search filterBy;
 	private List<RealEstate> registerList;
 	private SearchCriteria criteria;
 
 	@Before
 	public void init() {
-		registerList = new ArrayList<>();
 
-		registerList.add(new House(1, "Petrauskas", 120000, City.Vilnius, "Bajoru g. 10", 100.0,
-				EquipmentType.FullyEquipped, 5, 2010, 6.0));
-		registerList.add(new Flat(2, "Antanauskas", 100000, City.Kaunas, "Laisves al.55", 50.0, 2, 1980,
-				EquipmentType.PartialDecoration));
-		registerList
-				.add(new Plot(3, "Petrauskas", 50000, City.Marijampole, "Kauno g. 22", 10.0, PlotPurpose.Commercial));
-		registerList.add(new Premise(4, "Antanauskas", 110000, City.Marijampole, "Bajoru g. 1", 200.0,
-				PremisePurpose.Services, EquipmentType.FullyEquipped, 2005));
-		registerList.add(new Flat(5, "Vytauskas", 130000, City.Klaipeda, "Liepu al. 109", 65.0, 3, 2005,
-				EquipmentType.FullyEquipped));
-		registerList.add(new House(6, "Jonauskas", 200000, City.Vilnius, "Gedimino pr. 9", 80.0,
-				EquipmentType.FullyEquipped, 5, 1990, 2.0));
-		registerList
-				.add(new Plot(7, "Petrauskas", 70000, City.Kaunas, "Kauno g. 106", 20.0, PlotPurpose.ResidentialLand));
-		registerList.add(new House(8, "Jonauskas", 90000, City.Kaunas, "Vilniaus g. 5", 90.0,
-				EquipmentType.PartialDecoration, 3, 2010, 3.0));
+
+		RealEstate house1 = new House();
+		house1.setCity(City.Vilnius);
+		house1.setAddress("Bajoru g. 10");
+		house1.setArea(100.0);
+		house1.setPrice(120000);
+		((House) house1).setRooms(5);
+		((House) house1).setEquipment(EquipmentType.FullyEquipped);
+
+		RealEstate  house2 = new House();
+		house2.setCity(City.Kaunas);
+		house2.setAddress("Laisves al.55");
+		house2.setArea(50.0);
+		house2.setPrice(100000);
+		((House)house2).setRooms(2);
+		((House)house2).setEquipment(EquipmentType.PartialDecoration);
+
+		RealEstate  house3 = new House();
+		house3.setCity(City.Vilnius);
+		house3.setAddress("Vilniaus g. 5");
+		house3.setArea(80.0);
+		house3.setPrice(90000);
+		((House)house3).setRooms(3);
+		((House)house3).setEquipment(EquipmentType.FullyEquipped);
+
+		RealEstate  flat1 = new Flat();
+		flat1.setCity(City.Vilnius);
+		flat1.setAddress("Gedimino pr. 9");
+		flat1.setPrice(250000);
+		((Flat)flat1).setRooms(2);
+		((Flat)flat1).setEquipment(EquipmentType.FullyEquipped);
+		((Flat)flat1).setBuildYear(1980);
+
+
+		RealEstate  flat2 = new Flat();
+		flat2.setCity(City.Kaunas);
+		flat2.setAddress("Laisves al. 44");
+		flat2.setPrice(150000);
+		((Flat)flat2).setRooms(2);
+		((Flat)flat2).setEquipment(EquipmentType.PartialDecoration);
+
+		RealEstate  plot1 = new Plot();
+		plot1.setCity(City.Marijampole);
+		plot1.setAddress("Vilniaus g. 2");
+		plot1.setPrice(110000);
+		((Plot)plot1).setPurpose(PlotPurpose.Commercial);
+		((Plot)plot1).setArea(10.0);
+
+		RealEstate  plot2 = new Plot();
+		plot2.setCity(City.Ukmerge);
+		plot2.setAddress("Bukoniu k.");
+		plot2.setPrice(300000);
+		plot2.setArea(100.0);
+		((Plot)plot2).setPurpose(PlotPurpose.Agricultural);
+
+		RealEstate premise1 = new Premise();
+		premise1.setCity(City.Vilnius);
+		premise1.setAddress("Ulonu g. 5");
+		premise1.setArea(55.0);
+		premise1.setPrice(130000);
+		((Premise)premise1).setPurpose(PremisePurpose.Office);
+		((Premise)premise1).setBuildYear(2005);
+
+		RealEstate  premise2 = new Premise();
+		premise2.setCity(City.Marijampole);
+		premise2.setAddress("Kauno g. 55");
+		premise2.setArea(250.0);
+		premise2.setPrice(200000);
+		((Premise)premise2).setBuildYear(1999);
+		((Premise)premise2).setPurpose(PremisePurpose.WareHouse);
+
+		registerList = new ArrayList<>();
+		registerList.add(house1);
+		registerList.add(house2);
+		registerList.add(house3);
+		registerList.add(flat1);
+		registerList.add(flat2);
+		registerList.add(plot1);
+		registerList.add(plot2);
+		registerList.add(premise1);
+		registerList.add(premise2);
 
 		register = new Register(registerList);
 
-	//	criteria = new SearchCriteria(null, 70000, 110000, City.Kaunas, null, null, null, 1, 4, null, null, null, null);
+		criteria = new SearchCriteria();
+		criteria.setPriceFrom(100000);
+		criteria.setPriceTo(150000);
+		criteria.setCity(City.Vilnius);
 
-		search = new Search();
+		filterBy = new Search();
 
 	}
 
-	@Test
+    @Test
 	public void successCases() {
 
-		List<RealEstate> result = search.search(register, criteria);
+		List<RealEstate> result = filterBy.search(register, criteria);
 
 		Assert.assertEquals(2, result.size());
 		Assert.assertEquals(registerList.get(1).getId(), result.get(0).getId());

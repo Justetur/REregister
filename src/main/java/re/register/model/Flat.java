@@ -11,12 +11,7 @@ public class Flat extends RealEstate {
     private int buildYear;
     private EquipmentType equipment;
 
-    public Flat(Integer id, String owner, int price, City city, String address, double area, int rooms, int buildYear, EquipmentType equipment) {
-        super(id, owner, price, city, address, area);
-        this.rooms = rooms;
-        this.buildYear = buildYear;
-        this.equipment = equipment;
-    }
+
 
     public int getRooms() {
         return rooms;

@@ -12,13 +12,6 @@ public class House extends RealEstate {
     private int buildYear;
     private double plotArea;
 
-    public House(Integer id, String owner, int price, City city, String address, double area, EquipmentType equipment, int rooms, int buildYear, double plotArea) {
-        super(id, owner, price, city, address, area);
-        this.equipment = equipment;
-        this.rooms = rooms;
-        this.buildYear = buildYear;
-        this.plotArea = plotArea;
-    }
 
     public EquipmentType getEquipment() {
         return equipment;

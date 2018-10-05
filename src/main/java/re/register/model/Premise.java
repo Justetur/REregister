@@ -12,12 +12,7 @@ public class Premise extends RealEstate {
     private EquipmentType equipment;
     private int buildYear;
 
-    public Premise(Integer id, String owner, int price, City city, String address, double area, PremisePurpose purpose, EquipmentType equipment, int buildYear) {
-        super(id, owner, price, city, address, area);
-        this.purpose = purpose;
-        this.equipment = equipment;
-        this.buildYear = buildYear;
-    }
+
 
     public PremisePurpose getPurpose() {
         return purpose;
