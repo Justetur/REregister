@@ -107,18 +107,18 @@ public class SearchTest {
 
 		register = new Register(registerList);
 
-		criteria = new SearchCriteria();
-		criteria.setPriceFrom(100000);
-		criteria.setPriceTo(150000);
-		criteria.setCity(City.Vilnius);
-
-		filterBy = new Search();
 
 	}
 
     @Test
 	public void successCases() {
 
+		criteria = new SearchCriteria();
+		criteria.setPriceFrom(100000);
+		criteria.setPriceTo(150000);
+		criteria.setCity(City.Vilnius);
+
+		filterBy = new Search();
 		List<RealEstate> result = filterBy.search(register, criteria);
 
 		Assert.assertEquals(2, result.size());

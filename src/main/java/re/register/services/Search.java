@@ -113,18 +113,10 @@ public class Search {
 
     private boolean buildYearMatches(SearchCriteria criteria, RealEstate reObject) {
 
-        if (reObject instanceof Flat) {
-            Flat flat = (Flat) reObject;
-            return flat.getBuildYear() >= criteria.getBuildYearFrom() &&
-                    flat.getBuildYear() <= criteria.getBuildYearTo();
-        } else if (reObject instanceof House) {
-            House house = (House) reObject;
-            return house.getBuildYear() >= criteria.getBuildYearFrom() &&
-                    house.getBuildYear() <= criteria.getBuildYearTo();
-        } else if (reObject instanceof Premise) {
-            Premise premise = (Premise) reObject;
-            return premise.getBuildYear() >= criteria.getBuildYearFrom() &&
-                    premise.getBuildYear() <= criteria.getBuildYearTo();
+        if (reObject instanceof RoomsAndBuildYear) {
+            RoomsAndBuildYear obj = (RoomsAndBuildYear) reObject;
+            return obj.getBuildYear() >= criteria.getBuildYearFrom() &&
+                    obj.getBuildYear() <= criteria.getBuildYearTo();
         } else {
             return false;
         }
@@ -144,12 +136,9 @@ public class Search {
 
     private boolean roomsMatches(SearchCriteria criteria, RealEstate reObject) {
 
-        if (reObject instanceof Flat) {
-            Flat flat = (Flat) reObject;
-            return flat.getRooms() >= criteria.getRoomsFrom() && flat.getRooms() <= criteria.getRoomsTo();
-        } else if (reObject instanceof House) {
-            House house = (House) reObject;
-            return house.getRooms() >= criteria.getRoomsFrom() && house.getRooms() <= criteria.getRoomsTo();
+        if (reObject instanceof RoomsAndBuildYear) {
+            RoomsAndBuildYear obj = (RoomsAndBuildYear) reObject;
+            return obj.getRooms() >= criteria.getRoomsFrom() && obj.getRooms() <= criteria.getRoomsTo();
         } else {
             return false;
         }
@@ -191,18 +180,9 @@ public class Search {
 
     private boolean equipmentMatches(SearchCriteria criteria, RealEstate reObject) {
 
-        if (reObject instanceof Flat) {
-            Flat flat = (Flat) reObject;
-            return flat.getEquipment().toString().toLowerCase().startsWith(criteria.getEquipment().toString().toLowerCase());
-
-        } else if (reObject instanceof House) {
-            House house = (House) reObject;
-            return house.getEquipment().toString().toLowerCase().startsWith(criteria.getEquipment().toString().toLowerCase());
-
-        } else if (reObject instanceof Premise) {
-            Premise premise = (Premise) reObject;
-            return premise.getEquipment().toString().toLowerCase().startsWith(criteria.getEquipment().toString().toLowerCase());
-
+        if (reObject instanceof RoomsAndBuildYear) {
+            RoomsAndBuildYear obj = (RoomsAndBuildYear) reObject;
+            return obj.getEquipment().toString().toLowerCase().startsWith(criteria.getEquipment().toString().toLowerCase());
         } else {
             return false;
         }

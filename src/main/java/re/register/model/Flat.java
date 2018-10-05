@@ -5,7 +5,7 @@ import re.register.qualificators.City;
 import re.register.qualificators.EquipmentType;
 
 
-public class Flat extends RealEstate {
+public class Flat extends RealEstate implements RoomsAndBuildYear {
 
     private int rooms;
     private int buildYear;
