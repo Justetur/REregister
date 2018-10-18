@@ -4,7 +4,7 @@ package re.register.model;
 import re.register.qualificators.EquipmentType;
 
 
-public class House extends RealEstate {
+public class House extends RealEstate implements RoomsBuildYearEquipment {
 
     private EquipmentType equipment;
     private int rooms;

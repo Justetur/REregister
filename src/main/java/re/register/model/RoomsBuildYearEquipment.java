@@ -2,7 +2,7 @@ package re.register.model;
 
 import re.register.qualificators.EquipmentType;
 
-public interface RoomsAndBuildYear {
+public interface RoomsBuildYearEquipment {
 
     public int getRooms();
     public int getBuildYear();

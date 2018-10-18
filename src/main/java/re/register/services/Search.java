@@ -113,8 +113,8 @@ public class Search {
 
     private boolean buildYearMatches(SearchCriteria criteria, RealEstate reObject) {
 
-        if (reObject instanceof RoomsAndBuildYear) {
-            RoomsAndBuildYear obj = (RoomsAndBuildYear) reObject;
+        if (reObject instanceof RoomsBuildYearEquipment) {
+            RoomsBuildYearEquipment obj = (RoomsBuildYearEquipment) reObject;
             return obj.getBuildYear() >= criteria.getBuildYearFrom() &&
                     obj.getBuildYear() <= criteria.getBuildYearTo();
         } else {
@@ -136,8 +136,8 @@ public class Search {
 
     private boolean roomsMatches(SearchCriteria criteria, RealEstate reObject) {
 
-        if (reObject instanceof RoomsAndBuildYear) {
-            RoomsAndBuildYear obj = (RoomsAndBuildYear) reObject;
+        if (reObject instanceof RoomsBuildYearEquipment) {
+            RoomsBuildYearEquipment obj = (RoomsBuildYearEquipment) reObject;
             return obj.getRooms() >= criteria.getRoomsFrom() && obj.getRooms() <= criteria.getRoomsTo();
         } else {
             return false;
@@ -180,8 +180,8 @@ public class Search {
 
     private boolean equipmentMatches(SearchCriteria criteria, RealEstate reObject) {
 
-        if (reObject instanceof RoomsAndBuildYear) {
-            RoomsAndBuildYear obj = (RoomsAndBuildYear) reObject;
+        if (reObject instanceof RoomsBuildYearEquipment) {
+            RoomsBuildYearEquipment obj = (RoomsBuildYearEquipment) reObject;
             return obj.getEquipment().toString().toLowerCase().startsWith(criteria.getEquipment().toString().toLowerCase());
         } else {
             return false;
